@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA College Rankings - Karnataka</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .table-container {
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e8e8e8;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .college-code {
+            font-weight: bold;
+            color: #2c3e50;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .college-name {
+            font-weight: 500;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .rank {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .gm-rank {
+            color: #27ae60;
+        }
+        
+        .category-rank {
+            color: #e74c3c;
+        }
+        
+        .fee-link {
+            display: inline-block;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        /* Green for available links (with actual URLs) */
+        .fee-link.available {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .fee-link.available:hover {
+            background: linear-gradient(135deg, #229954, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+        
+        /* Blue for unavailable links (with # or empty href) */
+        .fee-link.unavailable {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .fee-link.unavailable:hover {
+            background: linear-gradient(135deg, #2980b9, #1f639a);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .stats {
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+                font-size: 0.85rem;
+            }
+            
+            .college-name {
+                font-size: 0.8rem;
+            }
+            
+            .fee-link {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MCA College Rankings in Bangalore below 3000 GM ranks </h1>
+            <p></p>
+        </div>
+        
+              <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>College Code</th>
+                        <th>College Name</th>
+                        <th>1G Category Rank</th>
+                        <th>GM Rank</th>
+                        <th>Fee Structure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="college-code">C463</td>
+                        <td class="college-name">R V COLLEGE OF ENGINEERING R V VIDYANIKETAN POST MYSORE ROAD BANGALORE</td>
+                        <td class="rank category-rank">132</td>
+                        <td class="rank gm-rank">31</td>
+                        <td><a href="https://drive.google.com/file/d/195RDhJ-6gp0EbbCJOV8Mnntocwzp1FID/view?usp=drivesdk" class="fee-link available" onclick="showFees('C463')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C414</td>
+                        <td class="college-name">BMS COLLEGE OF ENGINEERING POST BOX NO 1908 BULL TEMPLE ROAD BANGALORE</td>
+                        <td class="rank category-rank">184</td>
+                        <td class="rank gm-rank">114</td>
+                        <td><a href="https://drive.google.com/file/d/18oQIEmPHMyKV2Jw0xqDbvg4b5YZO7T5g/view?usp=drivesdk" class="fee-link available" onclick="showFees('C414')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C445</td>
+                        <td class="college-name">M S RAMAIAH INSTITUTE OF TECHNOLOGY MCA VIDYA SOUDHA MSRIT POST BANGALORE</td>
+                        <td class="rank category-rank">340</td>
+                        <td class="rank gm-rank">193</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C445')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C457</td>
+                        <td class="college-name">PES UNIVERSITY RING ROAD CAMPUS BANGALORE</td>
+                        <td class="rank category-rank">493</td>
+                        <td class="rank gm-rank">320</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C457')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C422</td>
+                        <td class="college-name">DAYANANDA SAGAR COLLEGE OF ENGINEERING SHAVIGE MALLESHWARA HILLS KUMARASWAMY LAYOUT BAN</td>
+                        <td class="rank category-rank">501</td>
+                        <td class="rank gm-rank">441</td>
+                        <td><a href="https://drive.google.com/file/d/18pRnk-y6A8rH35Op5bo1UNybu6s0K6kM/view?usp=drivesdk" class="fee-link available" onclick="showFees('C422')">View Fees</a></td>
+                    </tr>
+                                     <tr>
+                        <td class="college-code">C415</td>
+                        <td class="college-name">BMS INSTITUTE OF TECHNOLOGY & MANAGEMENT POST BOX NO 6443 AVALAHALLI BANGALOR</td>
+                        <td class="rank category-rank">1309</td>
+                        <td class="rank gm-rank">636</td>
+                        <td><a href="https://drive.google.com/file/d/18oQIEmPHMyKV2Jw0xqDbvg4b5YZO7T5g/view?usp=drivesdk" class="fee-link available" onclick="showFees('C415')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C468</td>
+                        <td class="college-name">RNS INSTITUTE OF TECHNOLOGY CHANNASANDRA BANGALORE</td>
+                        <td class="rank category-rank">686</td>
+                        <td class="rank gm-rank">656</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C468')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C411</td>
+                        <td class="college-name">BANGALORE INSTITUTE OF TECHNOLOGY K R ROAD V V PURAM BANGALORE 560004</td>
+                        <td class="rank category-rank">1196</td>
+                        <td class="rank gm-rank">797</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C411')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C421</td>
+                        <td class="college-name">DAYANANDA SAGAR COLLEGE OF ARTS SCIENCE & COMMERCE SHAVIGE MALLESHWARA HILLS KUMARASWAMY LAYOUT BAN</td>
+                        <td class="rank category-rank">1463</td>
+                        <td class="rank gm-rank">1105</td>
+                        <td><a href="https://drive.google.com/file/d/18pRnk-y6A8rH35Op5bo1UNybu6s0K6kM/view?usp=drivesdk" class="fee-link available" onclick="showFees('C421')">View Fees</a></td>
+                    </tr>
+                                    <tr>
+                        <td class="college-code">C592</td>
+                        <td class="college-name">M S RAMAIAH COLLEGE OF ARTS, SCIENCE & COMMERCESUR</td>
+                        <td class="rank category-rank">2948</td>
+                        <td class="rank gm-rank">1186</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C592')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C453</td>
+                        <td class="college-name">NEW HORIZON COLLEGE OF ENGINEERING M&T RING ROAD NEAR MARATHALLI BELLANDUR POST BANGALO</td>
+                        <td class="rank category-rank">2309</td>
+                        <td class="rank gm-rank">1197</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C453')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C576</td>
+                        <td class="college-name">RV INSTITUTE OF TECHNOLOGY AND MANAGEMENT KOTHANUR 8TH PHASE J P NAGAR BENGALURU 560 078</td>
+                        <td class="rank category-rank">2707</td>
+                        <td class="rank gm-rank">1258</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C576')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C420</td>
+                        <td class="college-name">CMR INSTITUTE OF TECHNOLOGY 132 AECS LAYOUT BANGALORE</td>
+                        <td class="rank category-rank">1910</td>
+                        <td class="rank gm-rank">1304</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C420')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C466</td>
+                        <td class="college-name">REVA UNIVERSITY BANGALORE</td>
+                        <td class="rank category-rank">2714</td>
+                        <td class="rank gm-rank">1378</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C466')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C520</td>
+                        <td class="college-name">DAYANANDA SAGAR UNIVERSITY BANGALORE</td>
+                        <td class="rank category-rank">3041</td>
+                        <td class="rank gm-rank">1461</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C520')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C412</td>
+                        <td class="college-name">BANGALORE UNIVERSITY JNANA BHARATHI CAMPUS BANGALORE</td>
+                        <td class="rank category-rank">3352</td>
+                        <td class="rank gm-rank">1490</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C412')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C425</td>
+                        <td class="college-name">DR AMBEDKAR INSTITUTE OF TECHNOLOGY OUTER RING ROAD BANGALORE</td>
+                        <td class="rank category-rank">1740</td>
+                        <td class="rank gm-rank">1604</td>
+                        <td><a href="https://drive.google.com/file/d/18uvkSpI54Tasv5Nc6SMk7l7uoIe-rC5F/view?usp=drivesdk" class="fee-link available" onclick="showFees('C425')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C534</td>
+                        <td class="college-name">JSS ACADEMY OF TECHNICAL EDUCATION JSSATE CAMPUS BANGALORE</td>
+                        <td class="rank category-rank">3081</td>
+                        <td class="rank gm-rank">1627</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C534')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C451</td>
+                        <td class="college-name">MOUNT CARMEL COLLEGE FOR WOMENS NO 58 PALACE ROAD BANGALORE</td>
+                        <td class="rank category-rank">2854</td>
+                        <td class="rank gm-rank">1634</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C451')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C503</td>
+                        <td class="college-name">DAYANANDA SAGAR ACADEMY OF TECHNOLOGY AND MANAGEMENT UDAYA PURA KANAKAPURA ROAD BANGALORE 560068</td>
+                        <td class="rank category-rank">2917</td>
+                        <td class="rank gm-rank">1827</td>
+                        <td><a href="https://drive.google.com/file/d/18pRnk-y6A8rH35Op5bo1UNybu6s0K6kM/view?usp=drivesdk" class="fee-link available" onclick="showFees('C503')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C401</td>
+                        <td class="college-name">ACHARYA INSTITUTE OF MANAGEMENT AND SCIENCES PEENYA BANGALORE</td>
+                        <td class="rank category-rank">2650</td>
+                        <td class="rank gm-rank">1896</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C401')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C526</td>
+                        <td class="college-name">CHRIST ACADEMY INSTITUTE FOR ADVANCED STUDIES CHRIST NAGAR HULLAHALLI BEGUR KOPPA ROAD SAKK</td>
+                        <td class="rank category-rank">3411</td>
+                        <td class="rank gm-rank">1990</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C526')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C584</td>
+                        <td class="college-name">ALLIANCE UNIERSITYCENTRAL CAMPUS, CHIKKAHAGADE CRO</td>
+                        <td class="rank category-rank">9221</td>
+                        <td class="rank gm-rank">2021</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C584')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C440</td>
+                        <td class="college-name">KRISTU JAYANTI COLLEGE OF MANAGEMENT AND TECHNOLOGY MCA K NARAYANAPURA BANGALOR</td>
+                        <td class="rank category-rank">3247</td>
+                        <td class="rank gm-rank">2156</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C440')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C438</td>
+                        <td class="college-name">KLE SOCIETY'S S NIJALINGAPPA COLLEGE 2ND BLOCK RAJAJINAGAR BANGALOR</td>
+                        <td class="rank category-rank">2730</td>
+                        <td class="rank gm-rank">2433</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C438')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C402</td>
+                        <td class="college-name">ACHARYA INSTITUTE OF GRADUATE STUDIES DR SARVEPALLI RADHAKRISHNAN ROAD SOLADEVANAHALLI</td>
+                        <td class="rank category-rank">3442</td>
+                        <td class="rank gm-rank">2509</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C402')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C417</td>
+                        <td class="college-name">CAMBRIDGE INSTITUTE OF TECHNOLOGY K R PURAM BANGALORE</td>
+                        <td class="rank category-rank">3744</td>
+                        <td class="rank gm-rank">2677</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C417')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C547</td>
+                        <td class="college-name">SJB INSTITUTE OF TECHNOLOGY BGS HEALTH & EDUCATION CITY NO 67 UTTARAHALLI RO</td>
+                        <td class="rank category-rank">2976</td>
+                        <td class="rank gm-rank">2739</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C547')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C524</td>
+                        <td class="college-name">ACHARYA INSTITUTE OF TECHNOLOGY SOLDEVANAHALLI HESARAGHATTA MAIN ROAD BANGALORE</td>
+                        <td class="rank category-rank">3706</td>
+                        <td class="rank gm-rank">2760</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C524')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                        <td class="college-code">C527</td>
+                        <td class="college-name">CMR UNIVERSITY NO 5 BHUVANAGIRI OMBR LAYOUT BANGALORE 43</td>
+                        <td class="rank category-rank">4443</td>
+                        <td class="rank gm-rank">2982</td>
+                        <td><a href="#" class="fee-link unavailable" onclick="showFees('C527')">View Fees</a></td>
+                    </tr>
+                    <tr>
+                                           </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+            </script>
+</body>
+</html>
